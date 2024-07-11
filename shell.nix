@@ -32,8 +32,9 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    export PICO_SDK_PATH=${pico-sdk}/lib/pico-sdk/
-    export PICO_EXTRAS_PATH=${pico-extras}/
     export ARM_NONE_EABI_INCLUDE_PATH=${pkgs.gcc-arm-embedded}/arm-none-eabi/include
+    export CMAKE_VERSION=${pkgs.cmake.version}
+    export PICO_EXTRAS_PATH=${pico-extras}/
+    export PICO_SDK_PATH=${pico-sdk}/lib/pico-sdk/
   '';
 }
